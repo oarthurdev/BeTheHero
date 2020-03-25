@@ -1,6 +1,10 @@
-<h4 align="center">
-  🚀 Semana OmniStack 11.0
-</h4>
+<h1 align="center">
+    <img alt="Semana OmniStack" src=".github/rocket.svg" width="400px" />
+</h1>
+
+<h2 align="center">
+  🚀 Semana Omnistack 11.0
+</h2>
 
 <p align="center">
   <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -13,7 +17,7 @@
 <br>
 
 <p align="center">
-    <strong>Be The Hero</strong>
+  <strong>Be The Hero</strong>
 </p>
 
 ## :rocket: Tecnologias
@@ -27,8 +31,13 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 Extras:
 
-- [ESLint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
+- Libs
+  - [Express](https://expressjs.com/pt-br/)
+  - [KnexJS](http://knexjs.org/)
+- Estilos
+  - [EditorConfig](https://editorconfig.org/)
+  - [ESLint](https://eslint.org/)
+  - [Prettier](https://prettier.io/)
 
 ## 💻 Projeto
 

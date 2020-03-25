@@ -1,9 +1,5 @@
 import React from "react";
+import Routes from "./routes";
+import "./App.css";
 
-export default () => {
-  return (
-    <div className="App">
-      <h1>Opa</h1>
-    </div>
-  );
-};
+export default () => <Routes />;

@@ -7,6 +7,7 @@ const routes = Router();
 routes.get("/ongs", OngsController.index);
 routes.post("/ongs", OngsController.store);
 
+routes.get("/incidents", IncidentsController.index);
 routes.post("/incidents", IncidentsController.store);
 
 export default routes;

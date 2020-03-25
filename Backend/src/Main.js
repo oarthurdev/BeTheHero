@@ -1,14 +1,12 @@
 import "dotenv/config";
 import cors from "cors";
 import express from "express";
+import routes from "./routes";
 
 const app = express();
 app.use(express.json());
 app.use(cors());
-
-app.get("/", (req, res) => {
-  return res.json({ opa: "Deu certo!" });
-});
+app.use(routes);
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`PORTA: ${process.env.PORT}`);

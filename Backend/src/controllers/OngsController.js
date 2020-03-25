@@ -3,7 +3,18 @@ import { randomBytes } from "crypto";
 
 export default {
   async index(req, res) {
-    return res.json(await connection("ongs").select("*"));
+    const { page = 1 } = req.query;
+
+    const [count] = await connection("ongs").count();
+
+    res.header("X-Total-Count", count["count(*)"]);
+
+    return res.json(
+      await connection("ongs")
+        .limit(5)
+        .offset((page - 1) * 5)
+        .select("*")
+    );
   },
 
   async store(req, res) {

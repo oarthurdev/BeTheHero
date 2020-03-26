@@ -1,12 +1,41 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 
 import "./styles.css";
 import "../../global.css";
 import Logo from "../../assets/logo.svg";
+import api from "../../services/api";
 
 export default () => {
+  const [title, setTitle] = useState("");
+  const [description, setdescription] = useState("");
+  const [value, setValue] = useState("");
+
+  const history = useHistory();
+  const ongId = localStorage.getItem("ongId");
+
+  async function handleSubmit(env) {
+    env.preventDefault();
+    try {
+      await api.post(
+        "incidents",
+        {
+          title,
+          description,
+          value
+        },
+        {
+          headers: {
+            Authorization: ongId
+          }
+        }
+      );
+      history.push("/profile");
+    } catch (error) {
+      alert("Error ao cadastrar caso");
+    }
+  }
   return (
     <div className="new-incident-container">
       <div className="content">
@@ -23,10 +52,25 @@ export default () => {
           </Link>
         </section>
 
-        <form>
-          <input type="text" placeholder="Titulo do Caso" />
-          <textarea type="email" placeholder="Descrição" />
-          <input type="text" placeholder="Valor em reais" />
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Titulo do Caso"
+            value={title}
+            onChange={env => setTitle(env.target.value)}
+          />
+          <textarea
+            type="text"
+            placeholder="Descrição"
+            value={description}
+            onChange={env => setdescription(env.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Valor em reais"
+            value={value}
+            onChange={env => setValue(env.target.value)}
+          />
 
           <button className="button">Cadastrar</button>
         </form>

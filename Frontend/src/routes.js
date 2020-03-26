@@ -7,14 +7,14 @@ import Profile from "./pages/Profile";
 import NewIncident from "./pages/NewIncident";
 
 export default () => {
-	return (
-		<BrowserRouter>
-			<Switch>
-				<Route path="/" exact component={Login} />
-				<Route path="/register" component={Register} />
-				<Route path="/profile" component={Profile} />
-				<Route path="/incidents/new" component={NewIncident} />
-			</Switch>
-		</BrowserRouter>
-	);
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" exact component={Login} />
+        <Route path="/register" component={Register} />
+        <Route path="/profile" component={Profile} />
+        <Route path="/incidents/new" component={NewIncident} />
+      </Switch>
+    </BrowserRouter>
+  );
 };

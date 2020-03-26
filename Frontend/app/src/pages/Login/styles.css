@@ -8,7 +8,7 @@
   /*Alinha items vertical*/
   align-items: center;
   /*Alinha items horizontal*/
-  justify-content: center;
+  justify-content: space-between;
 }
 
 section.form {

@@ -5,6 +5,9 @@ import { FaSignInAlt } from "react-icons/fa";
 import Heroes from "../../assets/heroes.png";
 import Logo from "../../assets/logo.svg";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import "./styles.css";
 import api from "../../services/api";
 
@@ -20,38 +23,47 @@ export default () => {
 
       localStorage.setItem("ongId", id);
       localStorage.setItem("ongName", response.data.name);
-
       history.push("/profile");
-
-      alert(`Bem vindo ${response.data.name}`);
+      //Necessário para que haja tempo do toast iniciar a execução após redirecionar a página
+      setTimeout(
+        toast.success(`Bem Vindo ${response.data.name}`, {
+          position: toast.POSITION.TOP_RIGHT
+        }),
+        3000
+      );
     } catch (error) {
-      alert("Erro no Login, tente novamente!");
+      toast.error("Error Notification !", {
+        position: toast.POSITION.TOP_RIGHT
+      });
     }
   }
 
   return (
-    <div className="login-containner">
-      <section className="form">
-        <img src={Logo} alt="logo" />
+    <>
+      <ToastContainer />
+      <div className="login-containner">
+        <section className="form">
+          <img src={Logo} alt="logo" />
 
-        <form onSubmit={hundleLogin}>
-          <h1>Faça seu Login</h1>
-          <input
-            type="text"
-            placeholder="Sua ID"
-            value={id}
-            onChange={env => setId(env.target.value)}
-          />
-          <button className="button" type="submit">
-            Entrar
-          </button>
-          <Link className="back-link" to="/register">
-            <FaSignInAlt height={16} color="#E02041" />
-            Não tenho Cadastro
-          </Link>
-        </form>
-      </section>
-      <img src={Heroes} alt="heroes" />
-    </div>
+          <form onSubmit={hundleLogin}>
+            <h1>Faça seu Login</h1>
+            <input
+              type="text"
+              placeholder="Sua ID"
+              value={id}
+              onChange={env => setId(env.target.value)}
+            />
+            <button className="button" type="submit">
+              Entrar
+            </button>
+            <Link className="back-link" to="/register">
+              <FaSignInAlt height={16} color="#E02041" />
+              Não tenho Cadastro
+            </Link>
+          </form>
+        </section>
+        <img src={Heroes} alt="heroes" />
+      </div>
+    </>
   );
 };

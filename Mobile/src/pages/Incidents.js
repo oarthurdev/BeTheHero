@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
-import Logo from "../../assets/logo.png";
+import Logo from "../assets/logo.png";
 
 export default () => {
   return (

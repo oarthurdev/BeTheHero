@@ -41,7 +41,7 @@ Extras:
 
 ## 💻 Projeto
 
-O **Be The Hero** é um projeto que visa conectar pessoas interessadas em ajudar ongs e ongs com campanhas abertas.
+O **Be The Hero** é um projeto que visa conectar pessoas interessadas em ajudar ongs com campanhas abertas.
 
 ## 🤔 Como contribuir
 

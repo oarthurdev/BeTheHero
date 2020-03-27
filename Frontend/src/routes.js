@@ -7,6 +7,7 @@ import Profile from "./pages/Profile";
 import NewIncident from "./pages/NewIncident";
 
 import PrivateRoute from "./components/PrivateRoute";
+import NotFoundPage from "./pages/404";
 
 export default () => {
   return (
@@ -16,6 +17,7 @@ export default () => {
         <Route path="/register" component={Register} />
         <PrivateRoute path="/profile" component={Profile} />
         <PrivateRoute path="/incidents/new" component={NewIncident} />
+        <Route component={NotFoundPage} />
       </Switch>
     </BrowserRouter>
   );

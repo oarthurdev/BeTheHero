@@ -32,7 +32,7 @@ export default () => {
         3000
       );
     } catch (error) {
-      toast.error("Error Notification !", {
+      toast.error("Erro ao se logar!", {
         position: toast.POSITION.TOP_RIGHT
       });
     }
